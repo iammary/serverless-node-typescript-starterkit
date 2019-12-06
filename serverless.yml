@@ -1,0 +1,24 @@
+service: serverless-nodejs-ts-starter # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+package:
+  exclude:
+    - node_modules/**/*
+  include:
+    handler.ts
+
+functions:
+  hello:
+    handler: handler.hello
+
+    events:
+      - http:
+          path: hello
+          method: get
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
