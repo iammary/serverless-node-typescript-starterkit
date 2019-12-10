@@ -4,12 +4,6 @@ provider:
   name: aws
   runtime: nodejs8.10
 
-package:
-  exclude:
-    - node_modules/**/*
-  include:
-    handler.ts
-
 functions:
   hello:
     handler: handler.hello
